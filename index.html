@@ -1,25 +1,179 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Ysabeau+SC:wght@100;300;400;500;700;900&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="style.css" />
-    <title>WOLF TECH</title>
+    <title>Wolf Tech</title>
+    <style>
+      /* CSS pentru stilizarea paginii */
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+      }
+
+      header {
+        background-color: #333;
+        color: #fff;
+        padding: 10px;
+        text-align: left;
+      }
+      header h1 {
+        display: inline-block;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+
+      #banner {
+        position: relative;
+        width: 100%;
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+      }
+
+      #banner img {
+        width: 20%;
+        height: auto;
+        animation: moveBanner 5s infinite alternate;
+      }
+
+      @keyframes moveBanner {
+        0% {
+          transform: translateX(0);
+        }
+        100% {
+          transform: translateX(20px);
+        }
+      }
+
+      #banner::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+      }
+
+      #content {
+        text-align: center;
+        padding: 20px;
+      }
+
+      .article {
+        background-color: #f9f9f9;
+        padding: 20px;
+        margin-bottom: 20px;
+      }
+
+      .article h3 {
+        color: #333;
+        margin-top: 0;
+      }
+
+      .article p {
+        color: #666;
+      }
+
+      footer {
+        background-color: #333;
+        color: #fff;
+        padding: 10px;
+        text-align: center;
+      }
+
+      /* CSS pentru stilizarea meniului dropdown */
+      .dropdown {
+        position: relative;
+        display: inline-block;
+      }
+      .dropbtn {
+        width: 160px;
+        height: 20px;
+      }
+
+      .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #f9f9f9;
+        min-width: 160px;
+        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+        z-index: 1;
+      }
+
+      .dropdown:hover .dropdown-content {
+        display: block;
+      }
+
+      .dropdown-content a {
+        color: black;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+      }
+
+      .dropdown-content a:hover {
+        background-color: #f1f1f1;
+      }
+    </style>
   </head>
   <body>
-    <header class="header">
-      <button class="menu">
-        <img class="menuimg" src="images/menu.png" alt="menu" />
-      </button>
-      <h1>
-        Wolf <img class="logo" src="images/logo-2952545.png" alt="logo" /> Tech
-      </h1>
+    <header>
+      <div class="dropdown">
+        <button class="dropbtn">Menu</button>
+        <div class="dropdown-content">
+          <a href="#content">News</a>
+          <a href="contact.html">Contact</a>
+          <a href="about.html">About</a>
+        </div>
+      </div>
+      <h1>WOLF TECH</h1>
     </header>
+
+    <div id="banner">
+      <img src="images/logo-2952545.png" alt="Banner Image" />
+    </div>
+
+    <div id="content">
+      <div class="article">
+        <h3>Articolul 1</h3>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque
+          ultrices augue quis lorem consectetur, et eleifend urna hendrerit.
+        </p>
+      </div>
+
+      <div class="article">
+        <h3>Articolul 2</h3>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque
+          ultrices augue quis lorem consectetur, et eleifend urna hendrerit.
+        </p>
+      </div>
+
+      <div class="article">
+        <h3>Articolul 3</h3>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque
+          ultrices augue quis lorem consectetur, et eleifend urna hendrerit.
+        </p>
+      </div>
+    </div>
+
+    <footer>&copy; 2023 Wolf Tech. All rights reserved.</footer>
+
+    <script>
+      // JavaScript pentru animarea bannerului
+      var banner = document.getElementById("banner");
+      banner.addEventListener("mouseover", function () {
+        banner.style.animationPlayState = "paused";
+      });
+
+      banner.addEventListener("mouseout", function () {
+        banner.style.animationPlayState = "running";
+      });
+    </script>
   </body>
 </html>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Contact</title>
+    <style>
+        /* CSS pentru stilizarea paginii */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        #content {
+            text-align: center;
+            padding: 20px;
+        }
+
+        h2 {
+            color: #333;
+        }
+
+        p {
+            color: #666;
+            margin-bottom: 20px;
+        }
+
+        form {
+            text-align: center;
+        }
+
+        input[type="text"],
+        textarea {
+            width: 300px;
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+
+        input[type="submit"] {
+            background-color: #333;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div id="content">
+        <h2>Contact</h2>
+        <form id="contact-form">
+            <input type="text" id="name" placeholder="Name"><br>
+            <input type="text" id="email" placeholder="Email"><br>
+            <textarea id="message" placeholder="Message"></textarea><br>
+            <input type="submit" value="Send">
+        </form>
+    </div>
+
+    <script src="https://cdn.emailjs.com/sdk/2.6.4/email.min.js"></script>
+    <script>
+        (function(){
+            emailjs.init("HZ_JMR0RQSglXZ7zIAeNC"); // Înlocuiți "YOUR_USER_ID" cu User ID-ul dvs. de pe EmailJS
+
+            document.getElementById('contact-form').addEventListener('submit', function(event) {
+                event.preventDefault();
+                // Obțineți valorile introduse în formular
+                var name = document.getElementById('name').value;
+                var email = document.getElementById('email').value;
+                var message = document.getElementById('message').value;
+
+                // Trimiterea emailului utilizând EmailJS
+                var templateParams = {
+                    from_name: name,
+                    from_email: email,
+                    to_name: 'Your Name', // Numele destinatarului emailului
+                    message: message
+                };
+
+                emailjs.send('service_lfyp86o', 'template_wsfmyv2', templateParams)
+                    .then(function(response) {
+                        console.log('Email sent!', response.status, response.text);
+                        alert('Email sent successfully!');
+                        document.getElementById('contact-form').reset(); // Resetați formularul după trimiterea emailului
+                    }, function(error) {
+                        console.log('Error sending email:', error);
+                        alert('Error sending email!');
+                    });
+            });
+        })();
+    </script</body>
+</html>
