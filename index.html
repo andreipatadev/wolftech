@@ -5,11 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Wolf Tech</title>
     <style>
-      /* CSS pentru stilizarea paginii */
       body {
         font-family: Arial, sans-serif;
         margin: 0;
         padding: 0;
+        color: white;
       }
 
       header {
@@ -64,17 +64,33 @@
 
       .article {
         background-color: #f9f9f9;
-        padding: 20px;
+        padding: 80px 0;
         margin-bottom: 20px;
+        width: 70%;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 100px;
+        border: 20px solid #333;
+        background-color: #333;
+        border-radius: 40px;
+        margin-top: 20px;
       }
 
-      .article h3 {
-        color: #333;
+      .article h2 {
+        
         margin-top: 0;
+        width: 50%;
+        margin-left: auto;
+        margin-right: auto;
+        padding-bottom: 30px;
       }
 
       .article p {
-        color: #666;
+        
+        width: 70%;
+        margin-left: auto;
+        margin-right: auto;
+        padding-bottom: 20px;
       }
 
       footer {
@@ -82,6 +98,29 @@
         color: #fff;
         padding: 10px;
         text-align: center;
+      }
+      iframe{
+        width: 854px;
+        height: 480px;
+      }
+      @media only screen and (max-width: 1250px){
+        iframe{
+          width: 80%;
+          height: 20rem;
+        }
+        .article{
+          width: 90%;
+        }
+        .article h2{
+          width: 70%;
+        }
+        .article p{
+          width: 90%;
+        }
+        #banner img{
+          width: 50%;
+        }
+
       }
     </style>
   </head>
@@ -96,27 +135,25 @@
 
     <div id="content">
       <div class="article">
-        <h3>Articolul 1</h3>
+        <h2>Transferă fișiere prin WIFI cu SHARIK</h3>
         <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque
-          ultrices augue quis lorem consectetur, et eleifend urna hendrerit.
+          Partajați fișiere pe dispozitive cu Sharik!
+Aplicația funcționează cu o conexiune Wi-Fi sau un hotspot Wi-Fi. Nu este nevoie de conexiune la internet. Este disponibil pentru Android, iOS, Windows, Mac și Linux.
         </p>
+        <iframe 
+src="https://www.youtube.com/embed/XR_fgNx-TNs">
+</iframe>
       </div>
 
       <div class="article">
-        <h3>Articolul 2</h3>
+        <h2>Ce poți să faci cu un program de analiză și vizualizare a datelor geospațiale (ArcGIS, QGIS)</h3>
         <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque
-          ultrices augue quis lorem consectetur, et eleifend urna hendrerit.
-        </p>
-      </div>
+          Bine ai venit la acest videoclip captivant despre ce poți să faci cu un program de analiză și vizualizare a datelor geospațiale, cum ar fi ArcGIS și QGIS. Fie că ești un pasionat de geografie, un profesionist în domeniul geospațial sau pur și simplu curios să afli mai multe despre această tehnologie, acest videoclip îți va arăta posibilitățile nelimitate pe care le oferă aceste instrumente.
 
-      <div class="article">
-        <h3>Articolul 3</h3>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque
-          ultrices augue quis lorem consectetur, et eleifend urna hendrerit.
         </p>
+        <iframe 
+src="https://www.youtube.com/embed/7Q9aGlNhxbc">
+</iframe>
       </div>
     </div>
 
